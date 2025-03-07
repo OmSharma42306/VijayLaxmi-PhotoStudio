@@ -10,7 +10,7 @@ function App() {
   ]);
   const bottomRef = useRef<HTMLDivElement>(null);
   const [showCursor, setShowCursor] = useState(true);
-
+  const [url,setUrl] = useState<string>("https://drive.google.com/drive/folders/10RtnJwZyzpkMJBRYQaqknT4HiQ1PELnF?usp=sharing");
   const commands = {
     help: () => `[ AVAILABLE COMMANDS ]
 ╔══════════════════════════════════════════════════╗
@@ -64,19 +64,19 @@ mission-critical assets.
 
 [ACCESS GRANTED - LEVEL 3 CLEARANCE]
 
-🔒 OPERATION: CYBER-DEFENSE | APR 2024 - JUL 2024
-   LOCATION: Internship Studio, Jamkhandi
-   OBJECTIVES:
-   ▸ Security audit implementation
-   ▸ Framework development [CLASSIFIED]
-   ▸ Network defense optimization
-
-🔒 OPERATION: CYBER-SHIELD | NOV 2024 - FEB 2025
-   LOCATION: Acmegrade
-   OBJECTIVES:
-   ▸ Security tool development
-   ▸ Cryptographic implementation
-   ▸ Network penetration assessment
+🔒 All Cyber Intern of Internship
+      ▸ Amcegrade Internship
+      ▸ Internship Studio
+      ▸ CodeAlpha Internship
+      ▸ TechnoHacks Internship
+🔒 Virtual Internship
+      ▸ Deloitte AU Virtual Internship
+      ▸ Datacom Virtual Internship
+      ▸ Tata Virtual Internship
+      ▸ JP Morgan Virtual Internship
+      ▸ ANZ Virtual Internship
+      ▸ AIG SHEILD UP Virtual Internship
+      ▸ Mastercard Virtual Internship
 
 [END OF CLASSIFIED DATA]`,
 
@@ -133,7 +133,7 @@ mission-critical assets.
     🎖️ OS Security
     🎖️ Securing BITCOIN
     🎖️ VAPT
-    📜 Certificates stored at: [Google Drive](YOUR_GOOGLE_DRIVE_LINK_HERE)
+    📜 Certificates stored at: [Google Drive] ${url}  
 
 
 
@@ -297,19 +297,19 @@ export default App;
 //     ║         CLASSIFIED OPERATION HISTORY             ║
 //     ╚══════════════════════════════════════════════════╝
 //     [ACCESS GRANTED - LEVEL 3 CLEARANCE]
-//     🔒 All Cyber Intern of Internship
-//       ▸ Amcegrade Internship
-//       ▸ Internship Studio
-//       ▸ CodeAlpha Internship
-//       ▸ TechnoHacks Internship
-//     🔒 Virtual Internship
-//       ▸ Deloitte AU Virtual Internship
-//       ▸ Datacom Virtual Internship
-//       ▸ Tata Virtual Internship
-//       ▸ JP Morgan Virtual Internship
-//       ▸ ANZ Virtual Internship
-//       ▸ AIG SHEILD UP Virtual Internship
-//       ▸ Mastercard Virtual Internship
+    // 🔒 All Cyber Intern of Internship
+    //   ▸ Amcegrade Internship
+    //   ▸ Internship Studio
+    //   ▸ CodeAlpha Internship
+    //   ▸ TechnoHacks Internship
+    // 🔒 Virtual Internship
+    //   ▸ Deloitte AU Virtual Internship
+    //   ▸ Datacom Virtual Internship
+    //   ▸ Tata Virtual Internship
+    //   ▸ JP Morgan Virtual Internship
+    //   ▸ ANZ Virtual Internship
+    //   ▸ AIG SHEILD UP Virtual Internship
+    //   ▸ Mastercard Virtual Internship
 //     [END OF CLASSIFIED DATA]`,
 
 //     projects: () => `╔══════════════════════════════════════════════════╗
@@ -351,7 +351,7 @@ export default App;
     // 🎖️ Securing BITCOIN
     // 🎖️ VAPT
     // 📜 Certificates stored at: [Google Drive](YOUR_GOOGLE_DRIVE_LINK_HERE)
-    [DOCUMENT END]`,
+ //   [DOCUMENT END]`,
 
 //     clear: () => {
 //       setHistory([]);
