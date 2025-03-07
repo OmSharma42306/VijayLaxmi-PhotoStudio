@@ -124,9 +124,18 @@ mission-critical assets.
 ╚══════════════════════════════════════════════════╝
 
 [VERIFICATION COMPLETE]
+    🎖️ Digital Forensics Masterclass
+    🎖️ Introduction to CIP by OWASP
+    🎖️ Introduction to Digital Forensics by SecurityBlueTeam
+    🎖️ Introduction to Darkweb Operations by SecurityBlueTeam
+    🎖️ NIST Framework
+    🎖️ IP Address and Subnetting in Udemy
+    🎖️ OS Security
+    🎖️ Securing BITCOIN
+    🎖️ VAPT
+    📜 Certificates stored at: [Google Drive](YOUR_GOOGLE_DRIVE_LINK_HERE)
 
-🏴‍☠️ Advanced Aquatic Operations: 15+ Years
-🏴‍☠️ Cyber Security Proficiency: VERIFIED
+
 
 [DOCUMENT END]`,
 
@@ -140,7 +149,21 @@ mission-critical assets.
    ▸ Secure Hiring Platform
    ▸ Implementation: CLASSIFIED
    ▸ Status: ACTIVE
-
+⚔️ Stenography
+⚔️ Password Management Tool
+   ▸ Password Strength Checker
+   ▸ Data Breach Checker
+   ▸ Password Generator
+⚔️ Phishing Awareness Tool
+⚔️ Phishing Simulator
+⚔️ Phishing Exercise
+⚔️ Digital Arrest Awareness
+⚔️ IP Slueth (IP Address Finder)
+⚔️ Key Logger
+⚔️ End Point Awareness Tool
+⚔️ SafeScript Encryptor - Message Security Suite
+⚔️ File Integrity Checker
+⚔️ Cyber Dashboard
 [END OF PROJECT FILES]`,
 
     clear: () => {
@@ -239,3 +262,153 @@ mission-critical assets.
 }
 
 export default App;
+
+
+// import React, { useState, useRef, useEffect } from 'react';
+// import { Shield, ShieldAlert } from 'lucide-react';
+
+// function App() {
+//   const [input, setInput] = useState('');
+//   const [history, setHistory] = useState<string[]>([
+//     '[ SYSTEM INITIALIZED - SECURE CONNECTION ESTABLISHED ]',
+//     "[ WELCOME TO NAVEEN TELASANG'S SECURE TERMINAL ]",
+//     '[ Type "help" to access available commands ]'
+//   ]);
+//   const bottomRef = useRef<HTMLDivElement>(null);
+//   const [showCursor, setShowCursor] = useState(true);
+
+//   const commands = {
+//     help: () => `[ AVAILABLE COMMANDS ]
+//     ╔══════════════════════════════════════════════════╗
+//     ║  SECURITY CLEARANCE LEVEL: AUTHORIZED ACCESS     ║
+//     ╚══════════════════════════════════════════════════╝
+//     [>] about         - Access biographical data
+//     [>] contact       - Secure communication channels
+//     [>] experience    - Professional engagement history
+//     [>] education     - Academic credentials
+//     [>] skills        - Technical capabilities
+//     [>] certifications- Security clearances
+//     [>] projects      - Classified operations
+//     [>] clear         - Purge terminal
+//     [>] help          - Command directory
+//     [ END OF SECURE TRANSMISSION ]`,
+
+//     experience: () => `╔══════════════════════════════════════════════════╗
+//     ║         CLASSIFIED OPERATION HISTORY             ║
+//     ╚══════════════════════════════════════════════════╝
+//     [ACCESS GRANTED - LEVEL 3 CLEARANCE]
+//     🔒 All Cyber Intern of Internship
+//       ▸ Amcegrade Internship
+//       ▸ Internship Studio
+//       ▸ CodeAlpha Internship
+//       ▸ TechnoHacks Internship
+//     🔒 Virtual Internship
+//       ▸ Deloitte AU Virtual Internship
+//       ▸ Datacom Virtual Internship
+//       ▸ Tata Virtual Internship
+//       ▸ JP Morgan Virtual Internship
+//       ▸ ANZ Virtual Internship
+//       ▸ AIG SHEILD UP Virtual Internship
+//       ▸ Mastercard Virtual Internship
+//     [END OF CLASSIFIED DATA]`,
+
+//     projects: () => `╔══════════════════════════════════════════════════╗
+//     ║         CLASSIFIED PROJECT FILES                ║
+//     ╚══════════════════════════════════════════════════╝
+//     [PROJECT ACCESS GRANTED]
+//     ⚔️ OPERATION: HIRE-HIGHER
+//       ▸ Secure Hiring Platform
+//       ▸ Implementation: CLASSIFIED
+//       ▸ Status: ACTIVE
+//     ⚔️ Stenography
+//     ⚔️ Password Management Tool
+//       ▸ Password Strength Checker
+//       ▸ Data Breach Checker
+//       ▸ Password Generator
+//     ⚔️ Phishing Awareness Tool
+//     ⚔️ Phishing Simulator
+//     ⚔️ Phishing Exercise
+//     ⚔️ Digital Arrest Awareness
+//     ⚔️ IP Slueth (IP Address Finder)
+//     ⚔️ Key Logger
+//     ⚔️ End Point Awareness Tool
+//     ⚔️ SafeScript Encryptor - Message Security Suite
+//     ⚔️ File Integrity Checker
+//     ⚔️ Cyber Dashboard
+//     [END OF PROJECT FILES]`,
+
+//     certifications: () => `╔══════════════════════════════════════════════════╗
+//     ║         SECURITY CLEARANCE DOCUMENTS           ║
+//     ╚══════════════════════════════════════════════════╝
+//     [VERIFICATION COMPLETE]
+    // 🎖️ Digital Forensics Masterclass
+    // 🎖️ Introduction to CIP by OWASP
+    // 🎖️ Introduction to Digital Forensics by SecurityBlueTeam
+    // 🎖️ Introduction to Darkweb Operations by SecurityBlueTeam
+    // 🎖️ NIST Framework
+    // 🎖️ IP Address and Subnetting in Udemy
+    // 🎖️ OS Security
+    // 🎖️ Securing BITCOIN
+    // 🎖️ VAPT
+    // 📜 Certificates stored at: [Google Drive](YOUR_GOOGLE_DRIVE_LINK_HERE)
+    [DOCUMENT END]`,
+
+//     clear: () => {
+//       setHistory([]);
+//       return '';
+//     }
+//   };
+
+//   const handleCommand = (cmd: string) => {
+//     const trimmedCmd = cmd.trim().toLowerCase();
+//     const commandFn = commands[trimmedCmd as keyof typeof commands];
+
+//     if (commandFn) {
+//       return commandFn();
+//     }
+//     return `[ERROR] Command not found: ${cmd} [SUGGESTION] Execute "help" for available commands.`;
+//   };
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     if (!input.trim()) return;
+
+//     const result = handleCommand(input);
+//     setHistory(prev => [...prev, `> ${input}`, result]);
+//     setInput('');
+//   };
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setShowCursor(prev => !prev);
+//     }, 500);
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   useEffect(() => {
+//     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+//   }, [history]);
+
+//   return (
+//     <div className="min-h-screen bg-[#000000] text-[#00ff00] p-4 font-mono relative overflow-hidden">
+//       <div className="absolute inset-0 pointer-events-none opacity-10">
+//         {Array.from({ length: 50 }).map((_, i) => (
+//           <div
+//             key={i}
+//             className="absolute text-[#00ff00] animate-matrix"
+//             style={{
+//               left: `${Math.random() * 100}%`,
+//               top: `${Math.random() * 100}%`,
+//               animationDelay: `${Math.random() * 5}s`,
+//               animationDuration: `${5 + Math.random() * 5}s`
+//             }}
+//           >
+//             {String.fromCharCode(33 + Math.floor(Math.random() * 94))}
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
