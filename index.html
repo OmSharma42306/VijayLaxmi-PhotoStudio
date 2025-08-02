@@ -262,6 +262,26 @@
             50% { background-position: 100% 50%; }
         }
 
+        .location-link {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 16px;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .location-link:hover {
+            background: rgba(231, 76, 60, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+        }
+
         /* Responsive design */
         @media (max-width: 768px) {
             .logo { font-size: 2rem; }
@@ -323,7 +343,10 @@
                         <div class="detail-icon">📍</div>
                         <div>
                             <strong>Venue:</strong> Shri Renukadevi Temple<br>
-                            Bustand, Hanagandi
+                            Bustand, Hanagandi<br>
+                            <a href="https://www.google.com/maps?q=16.4870248,75.0765278" target="_blank" class="location-link">
+                                📍 View on Google Maps
+                            </a>
                         </div>
                     </div>
                 </div>
