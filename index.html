@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijaylaxmi Photo Studio - Grand Opening</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.2); }
+            to { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.4); }
+        }
+
+        .tagline {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: slideUp 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .invitation-header {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .invitation-title {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        .studio-name {
+            font-size: 3.2rem;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .ceremony-details {
+            margin: 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 1.3rem;
+            color: #2c3e50;
+        }
+
+        .detail-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .camera-icon {
+            width: 80px;
+            height: 80px;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            animation: pulse 2s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .welcome-message {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin: 30px 0;
+            line-height: 1.6;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Decorative elements */
+        .decorative-border {
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #e74c3c, #764ba2, #667eea);
+            background-size: 300% 300%;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .logo { font-size: 2rem; }
+            .tagline { font-size: 1rem; }
+            .invitation-card { padding: 40px 20px; margin: 20px; }
+            .invitation-title { font-size: 2.2rem; }
+            .studio-name { font-size: 2.5rem; }
+            .detail-item { font-size: 1.1rem; flex-direction: column; text-align: center; }
+            .detail-icon { margin-right: 0; margin-bottom: 10px; }
+        }
+
+        /* Animation delays for staggered effect */
+        .detail-item:nth-child(1) { animation-delay: 0.2s; }
+        .detail-item:nth-child(2) { animation-delay: 0.4s; }
+        .detail-item:nth-child(3) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Animated particles background -->
+        <div class="particles" id="particles"></div>
+        
+        <!-- Decorative border -->
+        <div class="decorative-border"></div>
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">📸 Vijaylaxmi Photo Studio</h1>
+                <p class="tagline">Capturing Life's Beautiful Moments</p>
+            </div>
+        </header>
+        
+        <!-- Main content -->
+        <main class="main-content">
+            <div class="invitation-card">
+                <div class="invitation-header">
+                    <h2 class="invitation-title">Grand Opening Ceremony</h2>
+                    <div class="camera-icon">📷</div>
+                    <h3 class="studio-name">Vijaylaxmi Photo Studio</h3>
+                </div>
+                
+                <div class="ceremony-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">📅</div>
+                        <div>
+                            <strong>Date:</strong> 6th August 2025
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">🕘</div>
+                        <div>
+                            <strong>Time:</strong> 9:00 AM onwards
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">📍</div>
+                        <div>
+                            <strong>Venue:</strong> Shri Renukadevi Temple<br>
+                            Bustand, Hanagandi
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="welcome-message">
+                    "Join us as we embark on a journey to capture and preserve your most precious memories. Your presence will make this moment even more special!"
+                </p>
+                
+                <button class="cta-button" onclick="showMessage()">
+                    I'll Be There! ✨
+                </button>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Vijaylaxmi Photo Studio | Where Every Click Tells a Story</p>
+        </footer>
+        
+        <!-- Decorative border -->
+        <div class="decorative-border"></div>
+    </div>
+
+    <script>
+        // Create animated particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Button click animation and message
+        function showMessage() {
+            const button = document.querySelector('.cta-button');
+            button.style.transform = 'scale(0.95)';
+            button.innerHTML = 'Thank You! 🎉';
+            button.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+            
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+                alert('Thank you for confirming your attendance! We look forward to seeing you at the grand opening of Vijaylaxmi Photo Studio! 📸✨');
+            }, 200);
+            
+            setTimeout(() => {
+                button.innerHTML = "I'll Be There! ✨";
+                button.style.background = 'linear-gradient(135deg, #e74c3c, #c0392b)';
+            }, 3000);
+        }
+        
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Add mouse move effect to invitation card
+            const card = document.querySelector('.invitation-card');
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            });
+            
+            // Add click effect to detail items
+            const detailItems = document.querySelectorAll('.detail-item');
+            detailItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+            
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            detailItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'all 0.6s ease';
+                observer.observe(item);
+            });
+        });
+        
+        // Add some sparkle effects
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.width = '4px';
+            sparkle.style.height = '4px';
+            sparkle.style.background = '#fff';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.zIndex = '1000';
+            sparkle.style.animation = 'sparkleAnim 1s ease-out forwards';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+        
+        // Add sparkle animation CSS
+        const sparkleCSS = `
+            @keyframes sparkleAnim {
+                0% { opacity: 1; transform: scale(0) rotate(0deg); }
+                50% { opacity: 1; transform: scale(1) rotate(180deg); }
+                100% { opacity: 0; transform: scale(0) rotate(360deg); }
+            }
+        `;
+        
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = sparkleCSS;
+        document.head.appendChild(styleSheet);
+        
+        // Add sparkles on click
+        document.addEventListener('click', function(e) {
+            createSparkle(e.clientX, e.clientY);
+        });
+    </script>
+</body>
+</html>
